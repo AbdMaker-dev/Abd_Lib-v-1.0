@@ -38,10 +38,10 @@ class CreatEntity
     protected function creta_class_dao($className)
     {
         try {
-            $file_name = "../models/dao/" . ucfirst($className) . "Dao.php";
+            $file_name = "../models/dao/" . \strval(ucfirst($className))."Dao.php";
             $file = fopen($file_name, "w+");
             $contenu = "<?php\n\n" .
-                "class " . ucfirst($className) . "Dao extends DaoManager\n" .
+                "class " . \strval(ucfirst($className))."Dao extends DaoManager\n" .
                 "{\n" .
                 // $attributes.
                 "\n" . $this->add_contruct_dao($className) .

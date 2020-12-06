@@ -238,7 +238,7 @@ class Colonne
             "\n\t/**\n\t* findAll() return un tableau vide ou un tableau d'objets " . $clas_name . "\n\t*/\n\n" .
             "\n\t/**\n\t* findById(id) return null ou un objet " . $clas_name . "\n\t*/\n\n" .
             "\n\t/**\n\t* findBy(array data) return un tableau vide ou un tableau d'objets " . $clas_name . "\n\t*/\n\n" .
-            "\n\t/**\n\t* updateupdate(array data) Modifie les infos de l'objet " . $clas_name . " grace a l'ID\n\t*/\n\n".
+            "\n\t/**\n\t* update(array data) Modifie les infos de l'objet " . $clas_name . " grace a l'ID\n\t*/\n\n".
             "\n\n\n\t/**\n\t* Vous pouvez cree ici vos propre fonctions pour interoger la base de donnees en utilisant $"."this->pdo pour excute les requets\n\t*/\n\n";
     }
 
