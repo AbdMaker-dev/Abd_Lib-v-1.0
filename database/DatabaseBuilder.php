@@ -18,7 +18,6 @@ class DatabaseBuilder extends Colonne
     
     public function build()
     {
-
         Maker::creatTab("user", [
             $this->addCol('id')->integer()->cantNull(false)->increment()->save("user"),
             $this->addCol("username")->string()->cantNull()->unique()->save("user"),
