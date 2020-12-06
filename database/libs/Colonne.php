@@ -2,14 +2,12 @@
 
 namespace cols;
 
-class Colonne
+class Colonne 
 {
     private $col;
     private $attres;
     private $clas_name;
     private $closed;
-
-
 
     // Les types
     public function string($taille = 255)
@@ -53,7 +51,7 @@ class Colonne
         $enum = " ENUM( ";
         if ($vals != null) {
             for ($i = 0; $i < count($vals); $i++) {
-                $enum = $enum . $vals[$i];
+                $enum = $enum . "'".$vals[$i]."'";
                 if (isset($vals[$i + 1])) {
                     $enum = $enum . ",";
                 }
@@ -98,7 +96,7 @@ class Colonne
     public function foreignKey($attre, $ref, $attre_ref)
     {
 
-        $this->col = "CONSTRAINT `" . $attre . "_" . $ref . "_" . $attre_ref . "` FOREIGN KEY (`$attre`) REFERENCES `$ref` (`$attre_ref`) ";
+        $this->col = "CONSTRAINT FOREIGN KEY (`$attre`) REFERENCES `$ref` (`$attre_ref`)";
         return $this;
     }
 
@@ -120,7 +118,7 @@ class Colonne
         $this->col = $this->col . " UNSIGNED ";
         return $this;
     }
-
+    
     // fonction pour prendre en charge les modification
     public function addCol($col_name)
     {
@@ -141,7 +139,6 @@ class Colonne
         return $this->col;
     }
 
-  
     // creation de class et attributes 
     private function creat_class($className)
     {

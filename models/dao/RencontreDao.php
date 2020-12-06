@@ -32,7 +32,7 @@ class RencontreDao extends DaoManager
 
 
 	/**
-	* updateupdate(array data) Modifie les infos de l'objet rencontre grace a l'ID
+	* update(array data) Modifie les infos de l'objet rencontre grace a l'ID
 	*/
 
 

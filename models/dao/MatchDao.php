@@ -32,7 +32,7 @@ class MatchDao extends DaoManager
 
 
 	/**
-	* updateupdate(array data) Modifie les infos de l'objet match grace a l'ID
+	* update(array data) Modifie les infos de l'objet match grace a l'ID
 	*/
 
 

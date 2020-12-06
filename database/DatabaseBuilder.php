@@ -15,6 +15,7 @@ class DatabaseBuilder extends Colonne
 {
 
     protected $file;
+    
     public function build()
     {
 
@@ -68,8 +69,6 @@ class DatabaseBuilder extends Colonne
         ]);
         */
     }
-
-
 }
 $build = new DatabaseBuilder();
 $build->build();
