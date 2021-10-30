@@ -19,7 +19,7 @@ class DbMaker
         }
         $requet = $requet .  "\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;\n";
         try {
-            $file_name = "migration/".db."_tables_".date("Y_m_d")."_".date("h_m");
+            $file_name = __DIR__."/../migration/".db."_tables_".date("Y_m_d")."_".date("h_m");
             fopen($file_name.".sql", "c+");
             $contenu = file_get_contents($file_name.".sql");
             if ($contenu==null) {

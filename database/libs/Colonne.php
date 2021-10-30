@@ -143,7 +143,7 @@ class Colonne
     private function creat_class($className)
     {
         try {
-            $file_name = "../models/" . ucfirst($className) . ".php";
+            $file_name = __DIR__."/../../models/" . ucfirst($className) . ".php";
             $file = fopen($file_name, "w+");
 
             $attributes = '';
@@ -172,7 +172,7 @@ class Colonne
     private function creta_class_dao($className)
     {
         try {
-            $file_name = "../models/dao/" . ucfirst($className) . "Dao.php";
+            $file_name = __DIR__."/../../models/dao/" . ucfirst($className) . "Dao.php";
             $file = fopen($file_name, "w+");
             $contenu = "<?php\n\n" .
                 "class " . ucfirst($className) . "Dao extends DaoManager\n" .

@@ -17,7 +17,10 @@ abstract class DaoManager implements Idao
      */
     public function add($data)
     {
-        $req = "INSERT INTO " . $this->tabName . " VALUES (null, " . $this->createRequeteAdd($data) . ")";
+        
+
+        $req = "INSERT INTO " . $this->tabName . " VALUES (" . $this->createRequeteAdd($data) . ")";
+        echo $req."<br>";
         return $this->excuteUpdate($req, $data);
     }
 

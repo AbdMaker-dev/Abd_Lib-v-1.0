@@ -18,11 +18,20 @@ class DatabaseBuilder extends Colonne
     
     public function build()
     {
-        Maker::creatTab("user", [
-            $this->addCol('id')->integer()->cantNull(false)->increment()->save("user"),
-            $this->addCol("username")->string()->cantNull()->unique()->save("user"),
-            $this->addCol("password")->string()->cantNull()->save("user"),
-            $this->primaryKey("id")->save()
+        Maker::creatTab("surah", [
+            $this->addCol('number')->integer()->cantNull(false)->save("surah"),
+            $this->addCol("name")->string()->unique()->save("surah"),
+            $this->addCol("englishName")->string()->save("surah"),
+            $this->addCol("englishNameTranslation")->string()->save("surah"),
+            $this->primaryKey("number")->save()
+        ]);
+
+        Maker::creatTab("ayat", [
+            $this->addCol('number')->integer()->cantNull(false)->save("ayat"),
+            $this->addCol("text")->string()->save("ayat"),
+            $this->addCol('number_surah')->integer()->cantNull(false)->save("ayat"),
+            $this->primaryKey("number")->save(),
+            $this->foreignKey('number_surah','surah','number')->save()
         ]);
     }
 }
